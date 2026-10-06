@@ -1,0 +1,13 @@
+/* Shared treatment for every internal route: the supplied template's photography-led, layered presentation. */
+main.flex-1>div:not(.legacy-home){position:relative;isolation:isolate;background:#0c1228!important;padding-top:120px!important;min-height:100vh}
+main.flex-1>div:not(.legacy-home):before{content:"";position:absolute;z-index:-1;inset:0 0 auto;height:430px;background:linear-gradient(180deg,rgba(12,18,40,.72),#0c1228),url('/images/bg/main-slider-02.jpg') center/cover no-repeat;opacity:.95}
+main.flex-1>div:not(.legacy-home)>div{position:relative}
+main.flex-1>div:not(.legacy-home) h1{letter-spacing:-.02em;text-shadow:0 4px 18px #000}
+main.flex-1>div:not(.legacy-home) h2{letter-spacing:-.01em}
+main.flex-1>div:not(.legacy-home) [class*="bg-[#162239]"],main.flex-1>div:not(.legacy-home) [class*="bg-[#18233a]"],main.flex-1>div:not(.legacy-home) [class*="bg-[#172238]"]{box-shadow:0 20px 45px rgba(0,0,0,.25);border-color:rgba(255,255,255,.14);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+main.flex-1>div:not(.legacy-home) [class*="bg-[#162239]"]:hover,main.flex-1>div:not(.legacy-home) [class*="bg-[#18233a]"]:hover{transform:translateY(-5px);box-shadow:0 25px 55px rgba(0,0,0,.38);border-color:#f5a425}
+main.flex-1>div:not(.legacy-home) img{transition:transform .6s ease,filter .4s ease}
+main.flex-1>div:not(.legacy-home) img:hover{transform:scale(1.035);filter:saturate(1.12)}
+main.flex-1>div:not(.legacy-home) a,.legacy-footer a{transition:color .2s ease,transform .2s ease}
+main.flex-1>div:not(.legacy-home) .btn-zion{box-shadow:0 8px 25px rgba(245,164,37,.2)}
+@media(max-width:700px){main.flex-1>div:not(.legacy-home){padding-top:95px!important}main.flex-1>div:not(.legacy-home):before{height:370px}}
