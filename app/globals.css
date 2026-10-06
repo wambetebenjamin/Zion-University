@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-dark: #162239;
+  --primary-darker: #0c1228;
+  --primary-surface: #172238;
+  --primary-card: #18233a;
+  --primary-footer: #152036;
+  --accent-gold: #f5a425;
+  --accent-hover: #ffb834;
+  --accent-cyan: #33ccff;
+  --text-white: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.75);
+  --border-subtle: rgba(250, 250, 250, 0.1);
+  --border-focus: rgba(250, 250, 250, 0.25);
+  --shadow-glow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  background-color: var(--primary-darker);
+  color: #ffffff;
+}
+
+body {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  background-color: #0c1228;
+  color: #ffffff;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography Standards from specification */
+p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.text-meta {
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.text-nav {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.btn-zion {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 12px 24px;
+  background-color: #f5a425;
+  color: #ffffff;
+  border: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  min-height: 48px;
+  min-width: 48px;
+}
+
+.btn-zion:hover {
+  background-color: #ffb834;
+  color: #0c1228;
+  box-shadow: 0 4px 20px rgba(245, 164, 37, 0.4);
+}
+
+.btn-zion-outline {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 12px 24px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #f5a425;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  min-height: 48px;
+  min-width: 48px;
+}
+
+.btn-zion-outline:hover {
+  background-color: #f5a425;
+  color: #0c1228;
+  box-shadow: 0 4px 20px rgba(245, 164, 37, 0.3);
+}
+
+/* Template Section Heading Line Decoration */
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-heading h2 {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 14px 26px;
+  border: 2px solid rgba(250, 250, 250, 0.15);
+  background-color: rgba(22, 34, 57, 0.6);
+}
+
+.section-heading h2:before {
+  width: 1px;
+  height: 50px;
+  background-color: rgba(250, 250, 250, 0.2);
+  position: absolute;
+  top: -52px;
+  content: '';
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/* Flip Countdown Perspective */
+.perspective-container {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c1228;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #18233a;
+  border-radius: 4px;
+  border: 1px solid rgba(245, 164, 37, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f5a425;
+}
+
+/* Loader Visibility Rules */
+.loader-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+/* Form Styles */
+input, select, textarea {
+  background-color: rgba(250, 250, 250, 0.08);
+  border: 1px solid rgba(250, 250, 250, 0.15);
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #f5a425;
+  box-shadow: 0 0 0 2px rgba(245, 164, 37, 0.2);
+  background-color: rgba(22, 34, 57, 0.95);
+}
+
+/* Touch Targets Minimum Requirement */
+a, button, input, select, textarea {
+  min-height: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
