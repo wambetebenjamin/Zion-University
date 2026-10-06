@@ -28,7 +28,7 @@ export default function HomePage() {
     "name": "Zion University",
     "alternateName": "Zion University Kenya",
     "url": "https://zion.ac.ke",
-    "logo": "https://zion.ac.ke/images/hero/hero-campus.jpg",
+    "logo": "https://zion.ac.ke/images/bg/main-slider-01.jpg",
     "description": "Chartered higher education university in Nairobi and Mombasa, Kenya offering accredited undergraduate and postgraduate degree programmes.",
     "address": [
       {

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Accredited programmes, world-class pan-African research centres, and merit scholarships across Nairobi Main Campus and Mombasa Coastal Satellite Campus.",
     images: [
       {
-        url: "/images/hero/hero-campus.jpg",
+        url: "/images/bg/main-slider-01.jpg",
         width: 1200,
         height: 630,
         alt: "Zion University Campus Students",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Zion University | Shape the Future",
     description:
       "Premier higher education in Nairobi and Mombasa. 80+ accredited degree programmes.",
-    images: ["/images/hero/hero-campus.jpg"],
+    images: ["/images/bg/main-slider-01.jpg"],
   },
 };
 

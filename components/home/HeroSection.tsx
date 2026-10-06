@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Download, Users, BookOpen, Award, GraduationCap } from "lucide-react";
-import HeroCanvas from "./HeroCanvas";
 
 interface HeroProps {
   onOpenProspectus: () => void;
@@ -90,11 +89,11 @@ export default function HeroSection({ onOpenProspectus }: HeroProps) {
   }, [statsInView]);
 
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-between pt-24 md:pt-32 pb-12 overflow-hidden bg-[#0c1228]">
+    <section className="relative min-h-[92vh] flex flex-col justify-between pt-28 md:pt-36 pb-12 overflow-hidden bg-[#0c1228]">
       {/* Background Campus Photo with Clean East African Lighting */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero/hero-campus.jpg"
+          src="/images/bg/main-slider-01.jpg"
           alt="East African University students studying together on Zion University campus grounds in Kenya"
           fill
           priority
@@ -104,9 +103,6 @@ export default function HeroSection({ onOpenProspectus }: HeroProps) {
         {/* Subtle cinematic overlay - photo remains crisp and clearly visible */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0c1228] via-[#162239]/70 to-[#162239]/80" />
       </div>
-
-      {/* Three.js Floating Particle System */}
-      <HeroCanvas />
 
       {/* Main Hero Caption */}
       <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center my-auto">
