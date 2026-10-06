@@ -1,0 +1,39 @@
+{
+  "name": "zion-university",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "20.11.0"
+  },
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p 3000",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@vercel/blob": "0.23.4",
+    "@vercel/kv": "2.0.0",
+    "framer-motion": "11.2.10",
+    "lucide-react": "0.395.0",
+    "next": "14.2.5",
+    "next-auth": "4.24.7",
+    "nodemailer": "6.9.13",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-hook-form": "7.51.5",
+    "three": "^0.160.0",
+    "typescript": "5.4.5",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/nodemailer": "^6.4.15",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.160.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "3.4.4"
+  }
+}
