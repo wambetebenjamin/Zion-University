@@ -1,3 +1,6 @@
+@import './legacy.css';
+@import './legacy-shell.css';
+@import './premium-pages.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,116 +1,38 @@
 "use client";
 
-import React, { useState } from "react";
-import HeroSection from "@/components/home/HeroSection";
-import FeaturesStrip from "@/components/home/FeaturesStrip";
-import WhyUsSection from "@/components/home/WhyUsSection";
-import FacultiesSection from "@/components/home/FacultiesSection";
-import AdmissionsSection from "@/components/home/AdmissionsSection";
-import ResearchSection from "@/components/home/ResearchSection";
-import ScholarshipsSection from "@/components/home/ScholarshipsSection";
-import CampusLifeSection from "@/components/home/CampusLifeSection";
-import NewsEventsSection from "@/components/home/NewsEventsSection";
-import AlumniSection from "@/components/home/AlumniSection";
-import ContactSection from "@/components/home/ContactSection";
-import ProspectusModal from "@/components/modals/ProspectusModal";
-import VirtualTourModal from "@/components/modals/VirtualTourModal";
-import AlumniModal from "@/components/modals/AlumniModal";
+import { useState } from "react";
+
+const courses = [
+  ["Business Administration", "School of Business and Economics", "courses-01.jpg"],
+  ["Computer Science", "School of Engineering and Technology", "courses-02.jpg"],
+  ["Education", "School of Education", "courses-03.jpg"],
+  ["Law", "School of Law", "courses-04.jpg"],
+  ["Public Health", "School of Health Sciences", "courses-05.jpg"],
+];
 
 export default function HomePage() {
-  const [prospectusOpen, setProspectusOpen] = useState(false);
-  const [virtualTourOpen, setVirtualTourOpen] = useState(false);
-  const [alumniModalOpen, setAlumniModalOpen] = useState(false);
+  const [tab, setTab] = useState(0);
+  const tabs = [
+    ["Best Education", "choose-us-image-01.png", "Zion University provides practical, accredited education designed to prepare students for meaningful careers and service."],
+    ["Top Management", "choose-us-image-02.png", "Our experienced academic leadership connects rigorous teaching with the needs of Kenya, Africa and the wider world."],
+    ["Quality Community", "choose-us-image-03.png", "Learn in a supportive community with modern facilities, dedicated lecturers and opportunities to grow beyond the classroom."],
+  ];
+  return <main className="legacy-home">
+    <section className="legacy-hero" id="top">
+      <video autoPlay muted loop playsInline><source src="/images/hero/course-video.mp4" type="video/mp4" /></video>
+      <div className="legacy-overlay"><div className="legacy-caption"><h6>Welcome to Zion University</h6><h1><em>Your</em> Classroom</h1><a className="legacy-button" href="#about">Discover more</a></div></div>
+    </section>
 
-  // Schema.org EducationalOrganization JSON-LD
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Zion University",
-    "alternateName": "Zion University Kenya",
-    "url": "https://zion.ac.ke",
-    "logo": "https://zion.ac.ke/images/bg/main-slider-01.jpg",
-    "description": "Chartered higher education university in Nairobi and Mombasa, Kenya offering accredited undergraduate and postgraduate degree programmes.",
-    "address": [
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "Zion Towers, University Way",
-        "addressLocality": "Nairobi",
-        "postalCode": "00100",
-        "addressCountry": "KE"
-      },
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "Ocean View Academic Park, Nkurumah Road",
-        "addressLocality": "Mombasa",
-        "postalCode": "80100",
-        "addressCountry": "KE"
-      }
-    ],
-    "telephone": "+254112272061",
-    "email": "admissions@zion.ac.ke",
-    "sameAs": [
-      "https://facebook.com/ZionUniversityKenya",
-      "https://twitter.com/ZionUniKenya",
-      "https://linkedin.com/school/zion-university-kenya"
-    ]
-  };
+    <section className="legacy-features"><div className="legacy-container legacy-three">
+      {[['✎','All Programmes','Explore undergraduate and postgraduate programmes across our schools.','#about'],['⚑','Virtual Learning','Access flexible learning and digital resources wherever you are.','#admissions'],['▣','Zion Community','Join a vibrant university community in Nairobi and Mombasa.','#contact']].map(([icon,title,text,href])=><article key={title}><h3><span>{icon}</span>{title}</h3><p>{text}</p><a href={href}>More Info.</a></article>)}
+    </div></section>
 
-  return (
-    <>
-      {/* EducationalOrganization JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
+    <section className="legacy-section legacy-why" id="about"><div className="legacy-container"><div className="legacy-heading"><h2>Why choose Zion University?</h2></div><div className="legacy-tabs"><nav>{tabs.map((t,i)=><button className={tab===i?'active':''} onClick={()=>setTab(i)} key={t[0]}>{t[0]}</button>)}</nav><div className="legacy-tab-content"><img src={`/images/bg/${tabs[tab][1]}`} alt=""/><div><h2>{tabs[tab][0]}</h2><p>{tabs[tab][2]}</p><p>We are committed to excellence, integrity, innovation and service in higher education.</p></div></div></div></div></section>
 
-      {/* 1. Hero Section */}
-      <HeroSection onOpenProspectus={() => setProspectusOpen(true)} />
+    <section className="legacy-offer" id="admissions"><div className="legacy-container legacy-offer-grid"><div><h2>Begin your <em>Zion journey</em> today</h2><p>Applications are open for the 2026 academic year.</p><div className="legacy-counter"><b>2026</b><span>Admissions now open</span></div></div><form><h3>Request admission information</h3><input placeholder="Your Name"/><input placeholder="Your Email" type="email"/><input placeholder="Your Phone Number"/><button className="legacy-button">Get started</button></form></div></section>
 
-      {/* 2. Features Strip (Template reproduction) */}
-      <FeaturesStrip />
+    <section className="legacy-section legacy-courses"><div className="legacy-container"><div className="legacy-heading"><h2>Choose Your Programme</h2></div><div className="legacy-course-grid">{courses.map(([name,school,img])=><article key={name}><img src={`/images/bg/${img}`} alt=""/><div><small>{school}</small><h3>{name}</h3><a href="/faculties">View programme →</a></div></article>)}</div></div></section>
 
-      {/* 3. Why Us / About Section (Tabs reproduction) */}
-      <WhyUsSection />
-
-      {/* 4. Schools & Faculties Section (6 Faculty Cards) */}
-      <FacultiesSection />
-
-      {/* 5. Admissions Step-by-Step & Requirements Table */}
-      <AdmissionsSection />
-
-      {/* 6. Research Centres Section */}
-      <ResearchSection />
-
-      {/* 7. Scholarships with Flip Countdown Timer */}
-      <ScholarshipsSection />
-
-      {/* 8. Campus Life, Hostels, Sports & Virtual Tour */}
-      <CampusLifeSection onOpenVirtualTour={() => setVirtualTourOpen(true)} />
-
-      {/* 9. News & Events Section */}
-      <NewsEventsSection />
-
-      {/* 10. Alumni Network & Directory */}
-      <AlumniSection onOpenAlumniModal={() => setAlumniModalOpen(true)} />
-
-      {/* 11. Contact Section (Nairobi & Mombasa Tabs) */}
-      <ContactSection />
-
-      {/* Modals */}
-      <ProspectusModal
-        isOpen={prospectusOpen}
-        onClose={() => setProspectusOpen(false)}
-      />
-
-      <VirtualTourModal
-        isOpen={virtualTourOpen}
-        onClose={() => setVirtualTourOpen(false)}
-      />
-
-      <AlumniModal
-        isOpen={alumniModalOpen}
-        onClose={() => setAlumniModalOpen(false)}
-      />
-    </>
-  );
+    <section className="legacy-contact" id="contact"><div className="legacy-container legacy-contact-grid"><div><div className="legacy-heading"><h2>Contact Zion University</h2></div><p>Talk to our admissions team about programmes, applications and student life.</p><p><strong>Nairobi:</strong> Zion Towers, University Way<br/><strong>Mombasa:</strong> Ocean View Academic Park</p><p>+254 112 272 061 · admissions@zion.ac.ke</p></div><form><input placeholder="Your Name"/><input placeholder="Your Email"/><textarea placeholder="Your message" rows={4}/><button className="legacy-button">Send message</button></form></div></section>
+  </main>;
 }
